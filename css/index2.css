@@ -1,0 +1,222 @@
+@charset "utf8";
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Red: hsl(0, 66%, 54%);
+    /* Green 200 */
+    --lightGreen: hsl(148, 38%, 91%);
+    /* Green 600 */
+    --mediumGreen: hsl(169, 82%, 27%);
+    /* Grey 500  */
+    --mediumGray: hsl(186, 15%, 59%);
+    /* Grey 900 */
+    --darkGray: hsl(187, 24%, 22%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    /* outline: 1px solid red; */
+}
+
+#wrapper {
+    width: 100%;
+    background: var(--lightGreen);
+
+    display: grid;
+    /* ※ gridの幅を決めないと最小値になる */
+    grid-template-columns: 60%;
+    place-content: center;
+}
+
+#container {
+    width: 100%;
+    background: var(--White);
+    margin: 10vh 0;
+    border-radius: 10px;
+}
+
+header,
+form,
+footer {
+    width: 80%;
+    margin: 5% auto;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+#fullName {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    gap: 4%;
+    margin-bottom: 5%;
+}
+
+label {
+    display: block;
+    width: 100%;
+}
+
+input,
+textarea {
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+span {
+    margin-left: 2%;
+    color: var(--mediumGreen);
+}
+
+#firstName,
+#lastName,
+#email {
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--mediumGreen);
+}
+
+#firstName,
+#lastName {
+    display: grid;
+}
+
+.mail {
+    width: 100%;
+    margin-bottom: 5%;
+    display: grid;
+}
+
+#chooseOne {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    gap: 4%;
+    margin-top: 2vh;
+    margin-bottom: 5%;
+}
+
+.row {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--mediumGreen);
+    border-radius: 10px;
+}
+
+label[for="enquiry"],
+label[for="request"] {
+    font-size: 25px;
+    padding: 0 5%;
+}
+
+input[type="radio"] {
+    transform: scale(1.5);
+    margin: 0 10%;
+    accent-color: var(--mediumGreen);
+    cursor: pointer;
+
+}
+
+/* #enquiry {} */
+/* #request {} */
+
+#textarea {
+    display: grid;
+}
+
+#message {
+    border: 1px solid var(--mediumGreen);
+    border-radius: 10px;
+}
+
+/* .checkbox {
+} */
+
+.checkbox {
+    display: flex;
+    margin: 5% 0;
+}
+
+#scales {
+    margin: 0 3%;
+    /* display: none; */
+    /* transform: scale(1.3); */
+    /* outline: var(--mediumGreen); */
+}
+
+.submit {
+    height: 50px;
+}
+
+.submit input {
+    width: 100%;
+    height: 100%;
+    color: var(--White);
+    background: var(--mediumGreen);
+    margin: 0;
+    border-radius: 10px;
+}
+
+.attribution {
+    margin: auto;
+}
+
+
+/* ========== allBox:hoverAction ========== */
+/* ========== allBox:focusAction ========== */
+
+
+#firstName:hover,
+#lastName:hover,
+#email:hover,
+#message:hover {
+    outline: 2px solid var(--mediumGreen);
+}
+
+/* https://proengineer.internous.co.jp/content/columnfeature/6493#1 */
+/* https://magazine.techacademy.jp/magazine/30702 */
+/* https://ics.media/entry/241004/ */
+#scales:hover {
+    /* accent-color: var(--mediumGreen); */
+    border: 5px solid hsl(168, 84%, 15%);
+    /* border: 5px solid red; */
+    /* outline: 5px solid red; */
+}
+
+#firstName:focus,
+#lastName:focus,
+#email:focus,
+#message:focus {
+    outline: 2px solid var(--mediumGreen);
+}
+
+/* #scales:checked {
+    border: 2px solid var(--mediumGreen);
+    background: var(--mediumGray);
+} */
+
+#scales:checked {
+    background-color: hsl(168, 84%, 15%);
+    /* チェックON時の背景色 */
+    color: hsl(168, 84%, 15%);
+    /* チェックON時のテキスト色 */
+}
+
+
+/* .row:hover {
+    background: var(--lightGreen);
+} */
+
+.submit input:hover {
+    background: hsl(168, 84%, 15%);
+}

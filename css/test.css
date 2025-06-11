@@ -1,0 +1,389 @@
+/* ========== allBox:actions&cursors ========== */
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus {
+    border: 2px solid hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+.enquiry:hover,
+.enquiry:focus,
+.request:hover,
+.request:focus {
+    cursor: pointer;
+}
+
+label:hover,
+label:focus {
+    cursor: pointer;
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+#message:hover,
+#message:focus {
+    border: 2px solid hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+.checkbox label,
+.checkbox input {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: hsl(171, 83%, 14%);
+    cursor: pointer;
+}
+
+/* ========== allBox:actions&cursors ========== */
+
+/* 共通のCSS */
+* {
+    box-sizing: border-box;
+    outline: 1px solid red;
+    /* デバッグ用、最終的には削除推奨 */
+}
+
+body,
+html {
+    font-size: 16px;
+    font-family: Karla;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    background-color: hsl(148, 38%, 91%);
+    /* Green 200 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 100%);
+    /* PC/モバイルで共通 */
+}
+
+.inner_container {
+    width: 85%;
+    margin: auto;
+}
+
+h1 {
+    text-align: left;
+    /* margin はメディアクエリ内で調整 */
+}
+
+label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 20px;
+    /* PCで指定、モバイルはデフォルト */
+    text-align: left;
+    /* PCで指定、モバイルはデフォルト */
+}
+
+input[type="text"],
+input[type="email"] {
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 20px;
+    /* モバイルとPCで共通 */
+    width: 100%;
+    /* モバイルで指定、PCで調整 */
+}
+
+input[type="radio"] {
+    accent-color: hsl(169, 82%, 27%);
+}
+
+.flex {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+#message {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    /* モバイルとPCで共通 */
+}
+
+.checkbox {
+    display: flex;
+    /* モバイルで指定 */
+    margin: 40px 0;
+    /* モバイルで指定、PCで調整 */
+    align-items: center;
+    /* PCでlabelに指定 */
+}
+
+.checkbox label {
+    margin-bottom: 0;
+    /* モバイルで指定 */
+    padding-left: 20px;
+    /* PCで指定 */
+    display: flex;
+    /* PCで指定 */
+}
+
+.checkbox #scales {
+    margin-right: 20px;
+    /* モバイルで指定 */
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+    width: 25px;
+    /* モバイルで指定、PCで調整 */
+    padding: 30px;
+    /* PCで指定 */
+}
+
+.submit {
+    width: 100%;
+    height: 60px;
+    /* モバイルで指定、PCで調整 */
+    margin-bottom: 40px;
+    /* モバイルとPCで共通 */
+}
+
+.submit input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(169, 82%, 27%);
+    border-radius: 10px;
+    border-width: 0;
+    font-size: 16px;
+    /* モバイルで指定、PCで調整 */
+    text-align: center;
+    cursor: pointer;
+}
+
+span {
+    margin-left: 10px;
+    color: hsl(187, 24%, 22%);
+}
+
+/* ホバー時のスタイル (共通) */
+input[type="text"]:hover,
+input[type="email"]:hover,
+#message:hover {
+    display: block;
+    cursor: pointer;
+    border: 2px solid hsl(169, 82%, 27%);
+}
+
+input[type="radio"]:hover {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+.flex:hover,
+.flex>label:hover {
+    cursor: pointer;
+}
+
+.submit input:hover {
+    cursor: pointer;
+    background-color: hsl(168, 84%, 15%);
+}
+
+/* 375px以上(スマホの縦向き)のモニタで適用 */
+@media (min-width: 375px) {
+    .container {
+        width: 90%;
+        margin: 30px 15px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: 30px 0 50px 0;
+    }
+
+    .fullName {
+        display: block; /* デフォルト */
+    }
+
+    .fullName #firstName,
+    .fullName #lastName {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .mail {
+        margin-bottom: 50px;
+    }
+
+    .chooseOne {
+
+        display: block; /* デフォルト */
+        .flex {
+            label {
+                margin-bottom: 0;
+            }
+        }
+
+        .enquiry {
+            font-size: 18px;
+            padding: 20px;
+
+            #enquiry {
+                margin: 0 15px 0 0;
+                width: auto;
+                /* 調整 */
+            }
+        }
+
+        .request {
+            font-size: 18px;
+            padding: 20px;
+            margin: 30px 0 50px 0;
+
+            #request {
+                margin: 0 15px 0 0;
+                width: auto;
+                /* 調整 */
+            }
+        }
+    }
+
+    .checkbox {
+        /* display: flex; /* 共通で指定 */
+        margin: 40px 0;
+    }
+
+    .checkbox label {
+        /* display: block; /* デフォルト */
+        width: auto;
+        /* 調整 */
+        padding-left: 0;
+        /* 調整 */
+    }
+
+    .checkbox #scales {
+        width: 25px;
+        margin-right: 20px;
+        padding: 0;
+        /* 調整 */
+    }
+
+    .submit {
+        height: 60px;
+        margin-bottom: 40px;
+    }
+
+    .submit input[type="submit"] {
+        font-size: 16px;
+    }
+}
+
+/* 1440px以上のモニタで適用 */
+@media (min-width: 1440px) {
+    .wrapper {
+        width: 1440px;
+    }
+
+    .container {
+        width: 60%;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    h1 {
+        font-size: 52px;
+        margin: 50px 0;
+    }
+
+    label {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .fullName {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fullName .firstName {
+        width: 49%;
+        margin-bottom: 0;
+        /* 調整 */
+    }
+
+    .fullName .lastName {
+        width: 49%;
+    }
+
+    .mail {
+        margin: 50px 0;
+    }
+
+    .chooseOne {
+        display: flex;
+        justify-content: space-between;
+
+        .flex {
+            width: 48%;
+            padding: 10px;
+            margin-bottom: 40px;
+        }
+
+        .enquiry {
+            padding: 20px;
+
+            #enquiry {
+                width: 25px;
+                margin: 0 25px;
+            }
+        }
+
+        .request {
+            #request {
+                width: 25px;
+                margin: 0 25px;
+            }
+        }
+    }
+
+    .checkbox {
+        display: block;
+        /* 上書き */
+        margin: 50px 0 30px 0;
+    }
+
+    .checkbox label {
+        width: 80%;
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .checkbox #scales {
+        width: auto;
+        /* 調整 */
+        margin: 0 20px 0 0;
+        /* 調整 */
+        padding: 0;
+        /* 調整 */
+    }
+
+    .submit {
+        height: 70px;
+        margin-bottom: 40px;
+    }
+
+    .submit input[type="submit"] {
+        font-size: 24px;
+    }
+}

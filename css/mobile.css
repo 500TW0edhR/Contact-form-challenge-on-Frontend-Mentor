@@ -1,0 +1,214 @@
+@media (min-width: 375px) {
+    /* 375px以上(スマホの縦向き)のモニタで適用 */
+
+    * {
+        box-sizing: border-box;
+        /* outline: 1px solid red; */
+    }
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: Karla;
+        font-size: 16px;
+    }
+
+    .wrapper {
+        margin: 0 auto;
+        background-color: hsl(148, 38%, 91%);
+        /* Green 200 */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        border-radius: 10px;
+    }
+
+    .inner_container {
+        width: 85%;
+        margin: auto;
+    }
+
+    h1 {
+        /* 固有で指定、共有でmargin必要？pcとmobileじゃ違うのでは？ */
+        /* margin: 70px 0; */
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        border-radius: 10px;
+        border-width: 1px;
+    }
+
+
+    input[type="radio"] {
+        accent-color: hsl(169, 82%, 27%);
+    }
+
+    .flex {
+        display: flex;
+        border: 1px solid #333;
+        border-radius: 10px;
+    }
+
+    #message {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .checkbox {
+        display: flex;
+
+        #scales {
+            margin-right: 20px;
+            accent-color: hsl(169, 82%, 27%);
+            cursor: pointer;
+        }
+    }
+
+    .submit {
+        width: 100%;
+
+        input[type="submit"] {
+            width: 100%;
+            color: hsl(0, 0%, 100%);
+            background-color: hsl(169, 82%, 27%);
+            border-radius: 10px;
+            border-width: 0;
+        }
+    }
+
+    span {
+        margin-left: 10px;
+        color: hsl(187, 24%, 22%);
+    }
+
+    /* 共有一般cssここまで */
+
+    /* ========== allBox:hover ========== */
+
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    #message:hover {
+        display: block;
+        cursor: pointer;
+        border: 2px solid hsl(169, 82%, 27%);
+    }
+
+    input[type="radio"]:hover {
+        accent-color: hsl(169, 82%, 27%);
+        cursor: pointer;
+    }
+
+    .flex:hover,
+    .flex>label:hover {
+        cursor: pointer;
+    }
+
+    .submit input:hover {
+        cursor: pointer;
+        background-color: hsl(168, 84%, 15%);
+    }
+
+    /* ========== allBox:action ========== */
+
+    /* 共有box用cssここまで */
+
+    /* 以下固有CSS */
+
+    .container {
+        width: 90%;
+        margin: 30px 15px;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    h1 {
+        font-size: 40px;
+        margin: 30px 0 50px 0;
+    }
+
+    .fullName {
+
+        #firstName,
+        #lastName {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .mail {
+        display: block;
+        margin-bottom: 50px;
+
+        #email {
+            width: 100%;
+            padding: 20px;
+        }
+    }
+
+    .chooseOne {
+
+        .flex {
+            label {
+                margin-bottom: 0;
+            }
+        }
+
+        .enquiry {
+            font-size: 18px;
+            padding: 20px;
+
+            #enquiry {
+                margin: 0 15px 0 0;
+            }
+        }
+
+        .request {
+            font-size: 18px;
+            padding: 20px;
+            margin: 30px 0 50px 0;
+            
+            #request {
+                margin: 0 15px 0 0;
+            }
+        }
+    }
+
+    .checkbox {
+        margin: 40px 0;
+
+        label {
+            margin-bottom: 0;
+        }
+
+        #scales {
+            width: 25px;
+        }
+    }
+
+
+    .submit {
+        height: 60px;
+        margin-bottom: 40px;
+
+        input[type="submit"] {
+            height: 100%;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+
+
+}

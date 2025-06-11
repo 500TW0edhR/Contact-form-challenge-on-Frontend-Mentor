@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <!-- <link rel="stylesheet" href="./css/PC.css"> -->
+    <link rel="stylesheet" href="./css/PC2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
+
+    <title>Contact form | Frontend Mentor</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="inner_container">
+
+                <h1>Contact Us</h1>
+
+                <div class="fullName">
+                    <div class="firstName">
+                        <label for="firstName">First Name<span>*</span></label>
+                        <input type="text" id="firstName" name="name" required />
+                        <!--  minlength="4" maxlength="8" size="20"  -->
+                        <!-- This field is required -->
+                    </div>
+
+                    <div class="lastName">
+                        <label for="lastName">Last Name<span>*</span></label>
+                        <input type="text" id="lastName" name="name" required />
+                        <!--  minlength="4" maxlength="8" size="30" -->
+                    </div>
+                    <!-- This field is required -->
+                </div>
+
+                <div class="mail">
+                    <label for="email">Email Address<span>*</span></label>
+                    <input type="email" id="email" pattern=".+@example\.com" required />
+                    <!-- size="30" -->
+                </div>
+
+                <!-- Please enter a valid email address -->
+                <!-- This field is required -->
+
+                <p>Query Type<span>*</span></p>
+                <div class="chooseOne">
+                    <div class="row enquiry">
+                        <input type="radio" id="enquiry" name="enquiry" />
+                        <label for="enquiry">General Enquiry</label>
+                    </div>
+
+                    <div class="row request">
+                        <input type="radio" id="request" name="request" />
+                        <label for="request">Support Request</label>
+                    </div>
+                </div>
+
+                <!-- Please select a query type -->
+                <div class="textarea">
+                    <label for="message">Message<span>*</span></label>
+                    <textarea id="message" name="message" rows="20" cols="40"></textarea>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="scales" name="scales" />
+                    <label for="scales">I consent to being contacted by the team<span class="scales">*</span></label>
+                </div>
+
+                <!-- To submit this form, please consent to being contacted -->
+
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+
+                <!-- Message Sent!
+                Thanks for completing the form. We'll be in touch soon! -->
+
+            </div><!-- end of inner_container -->
+
+        </div><!-- end of container -->
+
+        <!-- <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+            Coded by <a href="#">Your Name Here</a>.
+        </div> -->
+    </div><!-- end of wrapper -->
+
+    <script src="./JavaScript/main.js"></script>
+</body>
+
+</html>

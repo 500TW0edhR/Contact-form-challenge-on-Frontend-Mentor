@@ -1,0 +1,371 @@
+@charset "utf8";
+
+
+/* - フォームを入力し、送信に成功すると成功のメッセージが表示されます。
+- 以下の場合、フォーム検証メッセージを受け取る
+  - 必須フィールドの入力漏れ
+  - メールアドレスが正しくフォーマットされていない
+- キーボードだけでフォームを入力する
+- 入力、エラーメッセージ、成功メッセージをスクリーンリーダーに表示する
+- デバイスの画面サイズに応じて、インターフェイスの最適なレイアウトを表示する
+- ページ上のすべてのインタラクティブ要素のホバーとフォーカスの状態を見る */
+
+/* モバイル：375px : デスクトップ デスクトップ：1440px */
+
+/* ### Primary */
+/* - Green 200 (lighter): hsl(148, 38%, 91%) */
+/* - Green 600 (medium): hsl(169, 82%, 27%) */
+/* - Red: hsl(0, 66%, 54%) */
+
+
+/* ### Neutral */
+/* - White: hsl(0, 0%, 100%) */
+/* - Grey 500 (medium): hsl(186, 15%, 59%) */
+/* - Grey 900 (darker): hsl(187, 24%, 22%) */
+
+
+/* ### Body Copy */
+/* - Font size (labels): 16px */
+
+
+/* ### Font */
+/* - Family: [Karla](https://fonts.google.com/specimen/Karla) */
+/* - Weights: 400, 700 */
+
+
+/* .proud-of-this-css {
+    color: papayawhip;
+} */
+
+
+
+/* 共有cssここから */
+
+* {
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Karla;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 100vw;
+    margin: 0 auto;
+    /* background-color: #E0F1E7; */
+    background-color: hsl(148, 38%, 91%);
+    /* Green 200 */
+}
+
+.container {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.inner_container {
+    width: 80%;
+    margin: auto;
+}
+
+h1 {
+    margin: 70px 0;
+    text-align: left;
+}
+
+
+input[type="text"],
+input[type="email"] {
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+
+input[type="radio"] {
+    accent-color: hsl(169, 82%, 27%);
+}
+
+.flex {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* ========== allBox:action ========== */
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    display: block;
+    cursor: pointer;
+    border: 2px solid hsl(169, 82%, 27%);
+}
+
+input[type="radio"]:hover {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+.flex:hover {
+    cursor: pointer;
+    border: 2px solid hsl(169, 82%, 27%);
+    background-color: hsl(186, 15%, 59%);
+}
+
+.flex label {
+    cursor: pointer;
+}
+
+.checkbox label,
+.checkbox input {
+    cursor: pointer;
+}
+
+.submit input:hover {
+    cursor: pointer;
+    background-color: hsl(168, 84%, 15%);
+}
+
+span {
+    margin-left: 10px;
+    color: hsl(187, 24%, 22%);
+}
+
+
+
+/* 共有cssここまで */
+
+
+/* 以下、固有css */
+/* モバイルファースト */
+
+@media (min-width: 375px) {
+    /* 375px以上(スマホの縦向き)のモニタで適用 */
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 90%;
+        margin: 30px 0;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    label {
+        display: block;
+        margin: 16px 0; 
+    }
+
+    #firstName,
+    #lastName,
+    #email {
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    .flex {
+        padding: 20px;
+    }
+
+    input#enquiry {
+        margin-right: 25px;
+    }
+
+    input#request {
+        margin-right: 25px;
+    }
+
+    .enquiry {
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+
+    .request {
+        padding: 5px;
+        margin-bottom: 50px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        /* height: 40px; */
+        margin-bottom: 20%;
+    }
+
+    /* input[type="radio"] {
+        width: 20px;
+    } */
+
+    .submit {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        color: hsl(0, 0%, 100%);
+        /* background-color: #0C7D69; */
+        background-color: hsl(169, 82%, 27%);
+        border-radius: 10px;
+        border-width: 0;
+    }
+
+    .checkbox {
+        display: flex;
+        /* margin: 30px 0; */
+    }
+    
+    input[type="checkbox"] {
+        /* margin: 20px; */
+        margin-right: 20px;
+        accent-color: hsl(169, 82%, 27%);
+    }
+    
+
+}
+
+@media (min-width: 480px) {
+    /* 480px以上(スマホの横向き)のモニタで適用 */
+}
+
+@media (min-width: 600px) {
+    /* 600px以上のタブレットやモニタで適用 */
+}
+
+@media (min-width: 960px) {
+
+    /* 960px以上のモニタで適用 */
+
+    .container {
+        width: 60%;
+        text-align: center;
+        margin: 10% 0;
+
+    }
+
+    .inner_container {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    label {
+        text-align: left;
+    }
+
+    .fullName {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .firstName {
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lastName {
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chooseOne {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flex.enquiry {
+        width: 48%;
+        padding: 10px;
+        margin-bottom: 40px;
+
+        input#enquiry {
+            margin-right: 25px;
+            width: 25px;
+        }
+
+        label {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+
+    .flex.request {
+        width: 48%;
+        padding: 10px;
+        margin-bottom: 40px;
+
+        input#request {
+            margin-right: 25px;
+            width: 25px;
+        }
+
+        label {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+
+
+    .checkbox {
+        display: flex;
+        margin: 30px 0;
+
+        label {
+            width: 80%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        input {
+            margin: 20px;
+            margin-right: 30px;
+            accent-color: hsl(169, 82%, 27%);
+        }
+    }
+    
+    .submit {
+        height: 60px;
+
+        input[type="submit"] {
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+
+    
+    
+
+
+}
+
+@media (min-width: 1280px) {
+    /* 1280px以上のモニタで適用 */
+}
+
+@media (min-width: 1440px) {
+    /* 1440px以上のモニタで適用 */
+
+}

@@ -1,0 +1,762 @@
+@charset "utf8";
+
+
+/* - フォームを入力し、送信に成功すると成功のメッセージが表示されます。
+- 以下の場合、フォーム検証メッセージを受け取る
+  - 必須フィールドの入力漏れ
+  - メールアドレスが正しくフォーマットされていない
+- キーボードだけでフォームを入力する
+- 入力、エラーメッセージ、成功メッセージをスクリーンリーダーに表示する
+- デバイスの画面サイズに応じて、インターフェイスの最適なレイアウトを表示する
+- ページ上のすべてのインタラクティブ要素のホバーとフォーカスの状態を見る */
+@charset "utf8";
+
+/* 共有cssここから */
+
+/* * {
+    outline: 1px solid red;
+} */
+
+body,
+html {
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100vw;
+    background-color: hsl(148, 38%, 91%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border-radius: 10px;
+}
+
+.inner_container {
+    width: 85%;
+    margin: auto;
+}
+
+h1 {
+    /* 固有で指定、共有でmargin必要？pcとmobileじゃ違うのでは？ */
+    /* margin: 70px 0; */
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 16px;
+}
+
+input[type="text"],
+input[type="email"] {
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+
+input[type="radio"] {
+    accent-color: hsl(169, 82%, 27%);
+}
+
+.flex {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+#message {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.checkbox {
+    display: flex;
+
+    #scales {
+        margin-right: 20px;
+        accent-color: hsl(169, 82%, 27%);
+        cursor: pointer;
+    }
+}
+
+.submit {
+    width: 100%;
+
+    input[type="submit"] {
+        width: 100%;
+        color: hsl(0, 0%, 100%);
+        background-color: hsl(169, 82%, 27%);
+        border-radius: 10px;
+        border-width: 0;
+    }
+}
+
+span {
+    margin-left: 10px;
+    color: hsl(187, 24%, 22%);
+}
+
+.error,
+.radioError {
+    color: red;
+}
+
+/* ========== cursor: actions ========== */
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus {
+    border: 2px solid hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+/* .enquiry:hover,
+.enquiry:focus,
+.request:hover,
+.request:focus {
+    cursor: pointer;
+} */
+
+.row:hover,
+.row:focus,
+.row:hover,
+.row:focus {
+    cursor: pointer;
+}
+
+label:hover,
+label:focus {
+    cursor: pointer;
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+#message:hover,
+#message:focus {
+    border: 2px solid hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+.checkbox label,
+.checkbox input {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: hsl(171, 83%, 14%);
+    cursor: pointer;
+}
+
+
+/* 共有cssここまで */
+
+/* 以下、固有css */
+/* スマートフォン */
+@media (max-width: 375px) {
+
+    .container {
+        width: 90vw;
+        margin: 30px auto;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    form {
+        width: 80vw;
+        margin: auto;
+        /* background-color: hsl(148, 38%, 91%);; */
+    }
+
+    #main_title {
+        margin: 30px 0;
+    }
+
+    span {
+        margin-left: 10px;
+        color: hsl(187, 24%, 22%);
+    }
+
+    .input-group {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    label {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+
+    input[type="text"],
+    input[type="email"] {
+        width: 98%;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #000;
+    }
+
+    p {
+        height: 40px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .chooseOne {
+
+        /* どちらかがクリックされたら背景色をhsl(145, 38%, 91%) に変更*/
+
+        .row {
+            display: flex;
+            margin-bottom: 25px;
+            padding: 13px;
+            border-radius: 10px;
+            border: 1px solid #000;
+
+            label {
+                width: 100%;
+                margin: 0 0 0 10px;
+            }
+
+            input[type="radio"] {
+                width: 25px;
+                margin: 0;
+                accent-color: hsl(169, 82%, 27%);
+            }
+        }
+    }
+
+    #message {
+        width: 98%;
+        border-radius: 10px;
+    }
+
+    .checkbox {
+        height: 40px;
+        margin: 40px 0;
+
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        label {
+            width: 90%;
+            margin-left: 10px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #scales {
+            width: 10px;
+            height: 50px;
+            margin: 0;
+            margin-left: 10px;
+            transform: scale(2);
+            accent-color: hsl(169, 82%, 27%);
+        }
+
+        .scales {
+            height: 20px;
+            color: hsl(187, 24%, 22%);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 35%;
+        }
+    }
+
+    .submit {
+        margin-bottom: 40px;
+
+        input[type="submit"] {
+            width: 100%;
+            height: 50px;
+            color: hsl(0, 0%, 100%);
+            background-color: hsl(169, 82%, 27%);
+            border-radius: 10px;
+        }
+    }
+
+}
+
+/* タブレット縦画面 */
+@media (min-width: 376px) and (max-width: 767px) {
+    /* 376px以上767px以下のデバイス向けのスタイル */
+}
+
+/* タブレット横画面 */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* 768px以上1023px以下のデバイス向けのスタイル */
+    /* minをベースにした方が良い */
+    .container {
+        width: 85vw;
+        margin: 5% auto;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    form {
+        width: 75vw;
+        margin: 50px auto;
+    }
+
+    #main_title {
+        font-size: 50px;
+        margin: 50px 0;
+    }
+
+    span {
+        margin-left: 5px;
+        color: hsl(187, 24%, 22%);
+    }
+
+    .fullName {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .input-group {
+            width: 49%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .mail {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    label,
+    p {
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .chooseOne {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        /* どちらかがクリックされたら背景色をhsl(145, 38%, 91%) に変更 */
+
+        .row {
+            width: 46.5%;
+            display: flex;
+            padding: 3px;
+            border-radius: 10px;
+            border: 1px solid #000;
+
+            label {
+                width: 48%;
+                margin: 0 0 0 10px;
+            }
+
+            input[type="radio"] {
+                width: 30px;
+                margin: 0 40px;
+                accent-color: hsl(169, 82%, 27%);
+            }
+        }
+    }
+
+    .textarea {
+
+        label {
+            width: 100%;
+        }
+
+        #message {
+            width: 99.5%;
+            border-radius: 10px;
+        }
+    }
+
+    .checkbox {
+        height: 50px;
+        margin: 50px 0;
+        display: flex;
+
+        label {
+            width: 80%;
+            margin-left: 30px;
+        }
+
+        #scales {
+            width: 30px;
+            accent-color: hsl(169, 82%, 27%);
+        }
+
+        .scales {
+            height: 20px;
+            color: hsl(187, 24%, 22%);
+        }
+    }
+
+    .submit {
+        height: 70px;
+        margin-bottom: 40px;
+
+        input[type="submit"] {
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            background-color: hsl(169, 82%, 27%);
+            border-radius: 10px;
+        }
+    }
+
+
+}
+
+/* デスクトップ(中) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+    .container {
+        width: 85vw;
+        margin: 5% auto;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    form {
+        width: 75vw;
+        margin: 50px auto;
+    }
+
+    #main_title {
+        font-size: 50px;
+        margin: 50px 0;
+    }
+
+    span {
+        margin-left: 5px;
+        color: hsl(187, 24%, 22%);
+    }
+
+    .fullName {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .input-group {
+            width: 49%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .mail {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    label,
+    p {
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .chooseOne {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        /* どちらかがクリックされたら背景色をhsl(145, 38%, 91%) に変更 */
+
+        .row {
+            width: 46.5%;
+            display: flex;
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid #000;
+
+            label {
+                width: 48%;
+                margin: 0 0 0 10px;
+            }
+
+            input[type="radio"] {
+                width: 30px;
+                margin: 0 40px;
+                accent-color: hsl(169, 82%, 27%);
+            }
+        }
+    }
+
+    .textarea {
+
+        label {
+            width: 100%;
+        }
+
+        #message {
+            width: 99.5%;
+            border-radius: 10px;
+        }
+    }
+
+    .checkbox {
+        height: 50px;
+        margin: 50px 0;
+        display: flex;
+
+        label {
+            width: 80%;
+            margin-left: 30px;
+        }
+
+        #scales {
+            width: 30px;
+            accent-color: hsl(169, 82%, 27%);
+        }
+
+        .scales {
+            height: 20px;
+            color: hsl(187, 24%, 22%);
+        }
+    }
+
+    .submit {
+        height: 70px;
+        margin-bottom: 40px;
+
+        input[type="submit"] {
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            background-color: hsl(169, 82%, 27%);
+            border-radius: 10px;
+        }
+    }
+
+}
+
+/* デスクトップ(大) */
+@media (min-width: 1440px) {
+
+    .container {
+        width: 85vw;
+        margin: 5% auto;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    form {
+        width: 75vw;
+        margin: 50px auto;
+    }
+
+    #main_title {
+        font-size: 50px;
+        margin: 50px 0;
+    }
+
+    span {
+        margin-left: 5px;
+        color: hsl(187, 24%, 22%);
+    }
+
+    .fullName {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .input-group {
+            width: 49%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .mail {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    label,
+    p {
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .chooseOne {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        /* どちらかがクリックされたら背景色をhsl(145, 38%, 91%) に変更 */
+
+        .row {
+            width: 46.5%;
+            display: flex;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #000;
+
+            label {
+                width: 48%;
+                margin: 0 0 0 10px;
+            }
+
+            input[type="radio"] {
+                width: 30px;
+                margin: 0 40px;
+                accent-color: hsl(169, 82%, 27%);
+            }
+        }
+    }
+
+    .textarea {
+
+        label {
+            width: 100%;
+        }
+
+        #message {
+            width: 99.5%;
+            border-radius: 10px;
+        }
+    }
+
+    .checkbox {
+        height: 50px;
+        margin: 50px 0;
+        display: flex;
+
+        label {
+            width: 80%;
+            margin-left: 30px;
+        }
+
+        #scales {
+            width: 30px;
+            accent-color: hsl(169, 82%, 27%);
+        }
+
+        .scales {
+            height: 20px;
+            color: hsl(187, 24%, 22%);
+        }
+    }
+
+    .submit {
+        height: 70px;
+        margin-bottom: 40px;
+
+        input[type="submit"] {
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            background-color: hsl(169, 82%, 27%);
+            border-radius: 10px;
+        }
+    }
+
+}
+
+
+
+
+
+/* - フォームを入力し、送信に成功すると成功のメッセージが表示されます。
+- 以下の場合、フォーム検証メッセージを受け取る
+  - 必須フィールドの入力漏れ
+  - メールアドレスが正しくフォーマットされていない
+- キーボードだけでフォームを入力する
+- 入力、エラーメッセージ、成功メッセージをスクリーンリーダーに表示する
+- デバイスの画面サイズに応じて、インターフェイスの最適なレイアウトを表示する
+- ページ上のすべてのインタラクティブ要素のホバーとフォーカスの状態を見る */
+
+/* モバイル：375px : デスクトップ デスクトップ：1440px */
+
+/* ### Primary */
+/* - Green 200 (lighter): hsl(148, 38%, 91%) */
+/* - Green 600 (medium): hsl(169, 82%, 27%) */
+/* - Red: hsl(0, 66%, 54%) */
+
+
+/* ### Neutral */
+/* - White: hsl(0, 0%, 100%) */
+/* - Grey 500 (medium): hsl(186, 15%, 59%) */
+/* - Grey 900 (darker): hsl(187, 24%, 22%) */
+
+
+/* ### Body Copy */
+/* - Font size (labels): 16px */
+
+
+/* ### Font */
+/* - Family: [Karla](https://fonts.google.com/specimen/Karla) */
+/* - Weights: 400, 700 */
+
+
+/* .proud-of-this-css {
+    color: papayawhip;
+} */
+
+
+/*------------------------------------------
+  Responsive Media Queries - 1280, 1024, 768, 480
+   1280-1024   - デスクトップ（デフォルトのグリッド）
+   1024-768    - タブレット横長
+   768-480     - タブレット縦長
+   480-less    - スマホ
+--------------------------------------------*/
