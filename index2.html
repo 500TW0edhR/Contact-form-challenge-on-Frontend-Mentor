@@ -8,7 +8,8 @@
     <!-- google fonts Karla -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="./css/index2.css">
     <title>Contact form | Frontend Mentor</title>
@@ -51,18 +52,17 @@
 
                 <p>Query Type<span>*</span></p>
                 <div id="chooseOne">
-                    <div class="row enquiry">
-                        <input type="radio" id="enquiry" name="enquiry" />
+                    <div class="parent enquiry">
+                        <input type="radio" id="enquiry" name="row" />
                         <label for="enquiry">General Enquiry</label>
                     </div>
 
-                    <div class="row request">
-                        <input type="radio" id="request" name="request" />
+                    <div class="parent request">
+                        <input type="radio" id="request" name="row" />
                         <label for="request">Support Request</label>
                     </div>
                 </div>
                 <!-- Please select a query type -->
-                <!-- どちらかがクリックされたら背景色をhsl(145, 38%, 91%) に変更-->
 
                 <div id="textarea">
                     <label for="message">Message<span>*</span></label>
@@ -71,20 +71,19 @@
 
                 <div class="checkbox">
                     <input type="checkbox" id="scales" name="scales" />
-                    <label for="scales">I consent to being contacted by the team<span class="scales">*</span></label>
+                    <label for="scales">I consent to being contacted by the team<span>*</span></label>
                 </div>
                 <!-- To submit this form, please consent to being contacted -->
                 <!-- このフォームを送信するには、チームからの連絡に同意してください。 -->
 
                 <div class="submit">
                     <input type="submit" value="Submit">
-                    <!-- <button type="submit"></button> -->
                 </div>
                 <!-- Message Sent! Thanks for completing the form. We'll be in touch soon! -->
                 <!-- メッセージを送信しました！ご記入ありがとうございました。すぐにご連絡いたします！ -->
 
             </form>
-            
+
         </div><!-- end of #container -->
 
         <div class="attribution">
@@ -93,6 +92,8 @@
         </div>
 
     </div><!-- end of #wrapper -->
+
+    <script src="./JavaScript/index2.js"></script>
 </body>
 
 </html>
