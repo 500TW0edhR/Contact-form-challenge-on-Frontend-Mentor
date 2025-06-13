@@ -12,7 +12,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./css/index2.css">
-    <title>Contact form | Frontend Mentor</title>
+    <!-- <title>Contact form | Frontend Mentor</title> -->
+    <title>Contact form challenge on Frontend Mentor</title>
 </head>
 
 <body>
@@ -26,23 +27,26 @@
             <form>
                 <div id="fullName">
                     <div class="firstName">
-                        <label for="firstName">First Name<span>*</span></label>
+                        <label for="firstName">First Name<span class="mark">*</span></label>
                         <input type="text" id="firstName" name="name" minlength="4" maxlength="8" required />
+                        <span class="attention">This field is required</span>
                         <!--  size="20"  -->
                         <!-- This field is required -->
                     </div>
 
                     <div class="lastName">
-                        <label for="lastName">Last Name<span>*</span></label>
+                        <label for="lastName">Last Name<span class="mark">*</span></label>
                         <input type="text" id="lastName" name="name" minlength="4" maxlength="8" required />
+                        <span class="attention">This field is required</span>
                         <!--  size="30" -->
                         <!-- This field is required -->
                     </div>
                 </div>
 
                 <div class="mail">
-                    <label for="email">Email Address<span>*</span></label>
+                    <label for="email">Email Address<span class="mark">*</span></label>
                     <input type="email" id="email" pattern=".+@example\.com" required />
+                    <span class="attention">Please enter a valid email address</span>
                     <!-- size="30" -->
                     <!-- This field is required -->
                 </div>
@@ -50,7 +54,7 @@
                 <!-- Please enter a valid email address -->
                 <!-- This field is required -->
 
-                <p>Query Type<span>*</span></p>
+                <p>Query Type<span class="mark">*</span></p>
                 <div id="chooseOne">
                     <div class="parent enquiry">
                         <input type="radio" id="enquiry" name="row" />
@@ -61,18 +65,21 @@
                         <input type="radio" id="request" name="row" />
                         <label for="request">Support Request</label>
                     </div>
+                    <span class="attention">Please select a query type</span>
                 </div>
                 <!-- Please select a query type -->
 
                 <div id="textarea">
-                    <label for="message">Message<span>*</span></label>
+                    <label for="message">Message<span class="mark">*</span></label>
                     <textarea id="message" name="message" rows="20" cols="40"></textarea>
+                    <span class="attention">This field is required</span>
                 </div>
 
                 <div class="checkbox">
                     <input type="checkbox" id="scales" name="scales" />
-                    <label for="scales">I consent to being contacted by the team<span>*</span></label>
+                    <label for="scales">I consent to being contacted by the team<span class="mark">*</span></label>
                 </div>
+                <span class="attention">To submit this form, please consent to being contacted</span>
                 <!-- To submit this form, please consent to being contacted -->
                 <!-- このフォームを送信するには、チームからの連絡に同意してください。 -->
 
@@ -80,17 +87,17 @@
                     <input type="submit" value="Submit">
                 </div>
                 <!-- Message Sent! Thanks for completing the form. We'll be in touch soon! -->
-                <!-- メッセージを送信しました！ご記入ありがとうございました。すぐにご連絡いたします！ -->
+                <!-- (※ アラートで) メッセージを送信しました！ご記入ありがとうございました。すぐにご連絡いたします！ -->
 
             </form>
 
         </div><!-- end of #container -->
 
+        
         <div class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
             Coded by <a href="#">meaningless cord</a>.
         </div>
-
     </div><!-- end of #wrapper -->
 
     <script src="./JavaScript/index2.js"></script>
