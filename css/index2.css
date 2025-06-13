@@ -36,14 +36,14 @@
     width: 100%;
     background-color: var(--White);
     margin: 10vh 0;
+    padding: 5vh 0 10vh 0;
     border-radius: 10px;
 }
 
 header,
-form,
-footer {
+form {
     width: 80%;
-    margin: 5% auto;
+    margin: 0 auto;
 }
 
 h1 {
@@ -68,9 +68,16 @@ textarea {
     margin-top: 2vh;
 }
 
-span {
+.mark {
     margin-left: 2%;
     color: var(--mediumGreen);
+}
+
+.attention {
+    display: block;
+    color: red;
+    margin-top: 5%;
+    visibility: hidden;
 }
 
 #firstName,
@@ -88,7 +95,7 @@ span {
     display: grid;
 }
 
-#email {
+.mail {
     width: 100%;
     margin-bottom: 5%;
     display: grid;
@@ -135,31 +142,31 @@ input[type="radio"] {
 }
 
 .checkbox {
-    display: flex;
-    margin: 5% 0;
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    margin-top: 5%;
 }
 
 #scales {
     margin: 0 3% 0 1%;
-    transform: scale(1.6);
+    transform: scale(1.2);
 }
 
-.submit {
-    height: 50px;
-}
 
 .submit input {
     width: 100%;
-    height: 100%;
+    height: 50px;
+    /* height: 100%; */
     color: var(--White);
     background-color: var(--mediumGreen);
-    margin: 0;
+    margin-top: 5%;
     border-radius: 10px;
 }
 
 .attribution {
-    margin: auto;
+    text-align: center;
 }
+
 
 
 
@@ -198,5 +205,3 @@ input[type="checkbox"]:checked {
 input[type="submit"]:hover {
     background-color: hsl(168, 84%, 15%);
 }
-
-
