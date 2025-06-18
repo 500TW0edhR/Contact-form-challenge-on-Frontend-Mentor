@@ -1,6 +1,5 @@
 @charset "utf8";
-/* min 600px max 1440px */
-/* min 1440px */
+/* @media 375px 599px */
 
 :root {
     --White: hsl(0, 0%, 100%);
@@ -30,16 +29,16 @@
 
     display: grid;
     /* ※ gridの幅を決めないと最小値になる */
-    grid-template-columns: 60%;
+    grid-template-columns: 90%;
     place-content: center;
 }
 
 #container {
     width: 100%;
     background-color: var(--White);
-    margin: 10vh 0;
-    padding: 5vh 0 10vh 0;
-    border-radius: 10px;
+    margin: 5vh 0;
+    padding-bottom: 5vh;
+    border-radius: 20px;
 }
 
 header,
@@ -60,10 +59,6 @@ p {
     margin-bottom: 4%;
 }
 
-input {
-    height: 60px;
-}
-
 .mark {
     margin-left: 2%;
     color: var(--mediumGreen);
@@ -72,23 +67,23 @@ input {
 .attention {
     display: block;
     color: red;
-    margin: 15px 0 30px 0;
+    margin: 3% 0 6% 0;
     visibility: hidden;
-}
-
-#fullName {
-    display: grid;
-    grid-template-columns: 48% 48%;
-    justify-content: space-between;
-    gap: 4%;
 }
 
 #firstName,
 #lastName,
 #email {
     width: 100%;
+    height: 60px;
+    font-size: 30px;
     border-radius: 10px;
     border: 1px solid var(--mediumGreen);
+}
+
+#firstName,
+#lastName {
+    display: grid;
 }
 
 .mail {
@@ -96,18 +91,11 @@ input {
     display: grid;
 }
 
-#chooseOne {
-    display: grid;
-    grid-template-columns: 48% 48%;
-    justify-content: space-between;
-    gap: 4%;
-}
-
 .parent {
     width: 100%;
     height: 60px;
+    margin: 5% 0;
     border-radius: 10px;
-
     display: flex;
     align-items: center;
     border: 1px solid var(--mediumGreen);
@@ -121,9 +109,8 @@ label[for="request"] {
 }
 
 input[type="radio"] {
-    height: auto;
-    transform: scale(2.2);
-    margin: 1% 10% 0 10%;
+    transform: scale(2);
+    margin: 1% 5% 0 10%;
     accent-color: var(--mediumGreen);
 }
 
@@ -148,8 +135,9 @@ input[type="radio"] {
 }
 
 label[for="scales"] {
+    width: 90%;
     margin: 0;
-    margin-left: 3%;
+    margin-left: 5%;
 }
 
 .submit input {

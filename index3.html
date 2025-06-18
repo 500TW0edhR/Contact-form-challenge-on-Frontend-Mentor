@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/index2.css" media="screen and (min-width: 1440px)">
+    <link rel="stylesheet" href="./css/index3.css">
+    <!-- <link rel="stylesheet" href="./css/index2.css" media="screen and (min-width: 1440px)">
     <link rel="stylesheet" href="./css/index2.css" media="screen and (min-width: 768px) and (max-width: 1440px)">
     <link rel="stylesheet" href="./css/mobile2.css" media="screen and (min-width: 375px) and (max-width: 768px)">
-    <link rel="stylesheet" href="./css/mobile2.css" media="screen and (max-width: 374px)">
+    <link rel="stylesheet" href="./css/mobile2.css" media="screen and (max-width: 374px)"> -->
 
     <!-- <title>Contact form | Frontend Mentor</title> -->
     <title>Contact form challenge on Frontend Mentor</title>
@@ -32,20 +33,20 @@
                 <div id="fullName">
                     <div class="firstName">
                         <label for="firstName">First Name<span class="mark">*</span></label>
-                        <input type="text" id="firstName" name="name" minlength="4" maxlength="8" required />
+                        <input type="text" id="firstName" class="firstName input" name="name" minlength="4" maxlength="8" required />
                         <span class="attention">This field is required</span>
                     </div>
 
                     <div class="lastName">
                         <label for="lastName">Last Name<span class="mark">*</span></label>
-                        <input type="text" id="lastName" name="name" minlength="4" maxlength="8" required />
+                        <input type="text" id="lastName" class="lastName input" name="name" minlength="4" maxlength="8" required />
                         <span class="attention">This field is required</span>
                     </div>
                 </div>
 
                 <div class="mail">
                     <label for="email">Email Address<span class="mark">*</span></label>
-                    <input type="email" id="email" pattern=".+@example\.com" required />
+                    <input type="email" id="email" class="email input" pattern=".+@example\.com" required />
                     <span class="attention">Please enter a valid email address</span>
                 </div>
 
@@ -55,12 +56,12 @@
                 <p>Query Type<span class="mark">*</span></p>
                 <div id="chooseOne">
                     <div class="parent enquiry">
-                        <input type="radio" id="enquiry" name="row" />
+                        <input type="radio" id="enquiry" class="enquiry input" name="row" />
                         <label for="enquiry">General Enquiry</label>
                     </div>
 
                     <div class="parent request">
-                        <input type="radio" id="request" name="row" />
+                        <input type="radio" id="request" class="request input" name="row" />
                         <label for="request">Support Request</label>
                     </div>
                     <span class="attention">Please select a query type</span>
@@ -69,12 +70,12 @@
 
                 <div id="textarea">
                     <label for="message">Message<span class="mark">*</span></label>
-                    <textarea id="message" name="message" rows="20" cols="40"></textarea>
+                    <textarea id="message" class="message textarea" name="message" rows="20" cols="40"></textarea>
                     <span class="attention">This field is required</span>
                 </div>
 
                 <div class="checkbox">
-                    <input type="checkbox" id="scales" name="scales" />
+                    <input type="checkbox" id="scales" class="scales input" name="scales" />
                     <label for="scales">I consent to being contacted by the team<span class="mark">*</span></label>
                 </div>
                 <span class="attention">To submit this form, please consent to being contacted</span>
@@ -98,7 +99,8 @@
         </div>
     </div><!-- end of #wrapper -->
 
-    <script src="./JavaScript/index2.js"></script>
+    <!-- <script src="./JavaScript/index2.js"></script> -->
+    <script src="./JavaScript/index2_2.js"></script>
 </body>
 
 </html>
