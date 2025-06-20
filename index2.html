@@ -22,6 +22,18 @@
 
 <body>
     <div id="wrapper">
+        
+        <!-- https://jsfiddle.net/sqbjoav4/98/ -->
+        <section id="modal" class="modal">
+            <div class="modal_header">
+                <span class='close'>☑</span>
+                <h2>Message Sent!</h2>
+            </div>
+            <p>Thanks for completing the form. We'll be in touch soon!</p>
+
+        </section>
+
+
         <div id="container">
 
             <header>
@@ -33,20 +45,20 @@
                     <div class="firstName">
                         <label for="firstName">First Name<span class="mark">*</span></label>
                         <input type="text" id="firstName" name="name" minlength="4" maxlength="8" required />
-                        <span class="attention">This field is required</span>
+                        <span class="attention fname">This field is required</span>
                     </div>
 
                     <div class="lastName">
                         <label for="lastName">Last Name<span class="mark">*</span></label>
                         <input type="text" id="lastName" name="name" minlength="4" maxlength="8" required />
-                        <span class="attention">This field is required</span>
+                        <span class="attention lname">This field is required</span>
                     </div>
                 </div>
 
                 <div class="mail">
                     <label for="email">Email Address<span class="mark">*</span></label>
                     <input type="email" id="email" pattern=".+@example\.com" required />
-                    <span class="attention">Please enter a valid email address</span>
+                    <span class="attention email">Please enter a valid email address</span>
                 </div>
 
                 <!-- Please enter a valid email address -->
@@ -63,26 +75,27 @@
                         <input type="radio" id="request" name="row" />
                         <label for="request">Support Request</label>
                     </div>
-                    <span class="attention">Please select a query type</span>
+                    <span class="attention radios">Please select a query type</span>
                 </div>
                 <!-- Please select a query type -->
 
                 <div id="textarea">
                     <label for="message">Message<span class="mark">*</span></label>
                     <textarea id="message" name="message" rows="20" cols="40"></textarea>
-                    <span class="attention">This field is required</span>
+                    <span class="attention message">This field is required</span>
                 </div>
 
                 <div class="checkbox">
                     <input type="checkbox" id="scales" name="scales" />
                     <label for="scales">I consent to being contacted by the team<span class="mark">*</span></label>
                 </div>
-                <span class="attention">To submit this form, please consent to being contacted</span>
+                <span class="attention scales">To submit this form, please consent to being contacted</span>
                 <!-- To submit this form, please consent to being contacted -->
                 <!-- このフォームを送信するには、チームからの連絡に同意してください。 -->
 
                 <div class="submit">
                     <input type="submit" id="submit" value="Submit">
+                    <!-- <input type="submit" id="submit" value="Submit" disabled> -->
                 </div>
                 <!-- Message Sent! Thanks for completing the form. We'll be in touch soon! -->
                 <!-- (※ アラートで) メッセージを送信しました！ご記入ありがとうございました。すぐにご連絡いたします！ -->
@@ -98,7 +111,8 @@
         </div>
     </div><!-- end of #wrapper -->
 
-    <script src="./JavaScript/index2.js"></script>
+    <!-- <script src="./JavaScript/index2.js"></script> -->
+    <script src="./JavaScript/index2_3.js"></script>
 </body>
 
 </html>

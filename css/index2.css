@@ -34,6 +34,36 @@
     place-content: center;
 }
 
+#modal {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.modal_header {
+    color: #fff;
+    display: flex;
+}
+
+.close {
+    border-radius: 50%;
+    margin-right: 2%;
+}
+
+#modal h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+
+}
+#modal p {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
 #container {
     width: 100%;
     background-color: var(--White);
